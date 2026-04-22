@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FilenameCleanerController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [FilenameCleanerController::class, 'index']);
+Route::post('/clean', [FilenameCleanerController::class, 'clean']);
